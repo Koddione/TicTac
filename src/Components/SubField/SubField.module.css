@@ -1,4 +1,4 @@
-.subField{
+.subField {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -6,21 +6,30 @@
 	cursor: pointer;
 	color: #161a55;
 }
-.right{
+.right {
 	border-right: 4px solid black;
 }
-.left{
+.left {
 	border-left: 4px solid black;
 }
-.top{
+.top {
 	border-top: 4px solid black;
 }
-.bottom{
+.bottom {
 	border-bottom: 4px solid black;
 }
-.rightTop{
-	border-Top: 4px solid black;
+.rightTop {
+	border-top: 4px solid black;
 	border-right: 4px solid black;
 }
 
-
+@media (max-width: 559px) {
+	.subField {
+		font-size: 50px;
+	}
+}
+@media (max-width: 390px) {
+	.subField {
+		font-size: 40px;
+	}
+}

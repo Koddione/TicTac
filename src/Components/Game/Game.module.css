@@ -1,16 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100..900&display=swap');
 
-.container{
+.container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	height: 90vh;
-	font-family: "Roboto";
-
+	font-family: 'Roboto';
 }
 
-.btnPlay{
+.btnPlay {
 	margin-top: 30px;
 	font-size: 25px;
 	padding: 10px 20px;
@@ -19,12 +18,18 @@
 	background-color: #46348a;
 	color: white;
 	cursor: pointer;
-	transition: opacity .3s ease;
+	transition: opacity 0.3s ease;
 	font-family: inherit;
 }
-.btnPlay:hover{
-	opacity: .9;
+.btnPlay:hover {
+	opacity: 0.9;
 }
-.btnPlay:active{
-	opacity: .6;
+.btnPlay:active {
+	opacity: 0.6;
+}
+
+@media (max-width: 559px) {
+	.btnPlay {
+		font-size: 20px;
+	}
 }

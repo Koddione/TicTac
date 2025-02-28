@@ -1,13 +1,12 @@
-p{
+p {
 	margin: 0;
 }
 
-.textMove{
+.textMove {
 	font-size: 40px;
 	margin-bottom: 10px;
-
 }
-.GameProcess{
+.GameProcess {
 	font-size: 30px;
 	margin-bottom: 20px;
 	padding: 10px;
@@ -17,4 +16,13 @@ p{
 	text-align: center;
 	border-radius: 10px;
 	color: white;
+}
+@media (max-width: 559px) {
+	.textMove {
+		font-size: 30px;
+	}
+	.GameProcess {
+		font-size: 25px;
+		max-width: 300px;
+	}
 }
