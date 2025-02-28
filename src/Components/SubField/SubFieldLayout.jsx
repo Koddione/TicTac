@@ -28,4 +28,5 @@ SubFieldLayout.propTypes = {
 	children: PropTypes.node,
 	id: PropTypes.number.isRequired,
 	handleFieldClick: PropTypes.func.isRequired,
+	disabled: PropTypes.bool
 };

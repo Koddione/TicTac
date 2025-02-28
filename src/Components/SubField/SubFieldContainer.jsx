@@ -1,4 +1,5 @@
 import { SubFieldLayout } from "./SubFieldLayout";
+import PropTypes from 'prop-types';
 
 const getBorder = (index) => {
 	switch (index) {
@@ -35,3 +36,9 @@ export const SubFieldContainer = ({ handleFieldClick, field, isDisabled }) => {
 		</>
 	);
 };
+
+SubFieldContainer.propTypes = {
+	handleFieldClick: PropTypes.func.isRequired,
+	field: PropTypes.array.isRequired,
+	isDisabled: PropTypes.bool
+}

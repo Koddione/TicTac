@@ -1,4 +1,5 @@
 import { FieldLayout } from "./FieldLayout"
+import PropTypes from 'prop-types';
 
 export const FieldContainer = ({ handleFieldClick, field, isDisabled }) => {
 	return <FieldLayout
@@ -6,4 +7,10 @@ export const FieldContainer = ({ handleFieldClick, field, isDisabled }) => {
 		handleFieldClick={handleFieldClick}
 		isDisabled={isDisabled}
 	/>
+}
+
+FieldContainer.propTypes = {
+	handleFieldClick: PropTypes.func.isRequired,
+	field: PropTypes.array.isRequired,
+	isDisabled: PropTypes.bool
 }

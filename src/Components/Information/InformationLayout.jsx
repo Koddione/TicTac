@@ -1,7 +1,8 @@
 import styles from './Information.module.css'
+import PropTypes from 'prop-types';
 
 
-export const InformationLayout = ({ currentPlay, iSFieldDisabled, draw }) => {
+export const InformationLayout = ({ currentPlay, draw }) => {
 	return (
 		<>
 			<p className={styles.textMove}>
@@ -10,4 +11,9 @@ export const InformationLayout = ({ currentPlay, iSFieldDisabled, draw }) => {
 			<p className={styles.GameProcess}>{draw}</p>
 		</>
 	)
+}
+
+InformationLayout.propTypes = {
+	currentPlay: PropTypes.string,
+	draw: PropTypes.string
 }

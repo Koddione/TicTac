@@ -1,6 +1,6 @@
 import styles from './Field.module.css'
 import { SubFieldContainer } from '../SubField/SubFieldContainer'
-import { useState } from 'react'
+import PropTypes from 'prop-types'
 
 export const FieldLayout = ({ handleFieldClick, field, isDisabled }) => {
 
@@ -16,4 +16,10 @@ export const FieldLayout = ({ handleFieldClick, field, isDisabled }) => {
 
 	)
 
+}
+
+FieldLayout.propTypes = {
+	handleFieldClick: PropTypes.func.isRequired,
+	field: PropTypes.array,
+	isDisabled: PropTypes.bool,
 }

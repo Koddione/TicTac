@@ -6,7 +6,6 @@ export const GameContainer = () => {
 	const [currentPlay, setCurrentPlay] = useState("X");
 	const [isGameEnded, setIsGameEnded] = useState(true);
 	const [draw, setDraw] = useState("Игра еще не начата");
-	const [selectedId, setSelectedId] = useState(null);
 	const [field, setField] = useState(["", "", "", "", "", "", "", "", ""])
 
 	const WIN_PATTERNS = [
@@ -25,7 +24,6 @@ export const GameContainer = () => {
 
 	}
 	const handleFieldClick = (id) => {
-		setSelectedId(id);
 
 		const newField = [...field]
 
