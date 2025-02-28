@@ -21,7 +21,7 @@ export const GameContainer = () => {
 		}
 
 	}
-
+	console.log("1");
 	return (
 
 		<GameLayout
