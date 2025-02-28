@@ -1,0 +1,26 @@
+.subField{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 80px;
+	cursor: pointer;
+	color: #161a55;
+}
+.right{
+	border-right: 4px solid black;
+}
+.left{
+	border-left: 4px solid black;
+}
+.top{
+	border-top: 4px solid black;
+}
+.bottom{
+	border-bottom: 4px solid black;
+}
+.rightTop{
+	border-Top: 4px solid black;
+	border-right: 4px solid black;
+}
+
+

@@ -1,0 +1,16 @@
+
+.ticTacField{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3,1fr);
+	flex-direction: column;
+	max-width: 500px;
+	height: 500px;
+	background-color: rgba(41, 47, 95, 0.185);
+	width: 100%;
+	padding: 20px;
+	border-radius: 15px;
+}
+
+
+

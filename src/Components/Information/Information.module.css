@@ -1,0 +1,20 @@
+p{
+	margin: 0;
+}
+
+.textMove{
+	font-size: 40px;
+	margin-bottom: 10px;
+
+}
+.GameProcess{
+	font-size: 30px;
+	margin-bottom: 20px;
+	padding: 10px;
+	background-color: rgb(104, 94, 122);
+	max-width: 400px;
+	width: 100%;
+	text-align: center;
+	border-radius: 10px;
+	color: white;
+}
