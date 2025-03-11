@@ -1,25 +1,10 @@
-import styles from './Field.module.css'
-import { SubFieldContainer } from '../SubField/SubFieldContainer'
-import PropTypes from 'prop-types'
+import styles from './Field.module.css';
+import { SubFieldContainer } from '../SubField/SubFieldContainer';
 
-export const FieldLayout = ({ handleFieldClick, field, isDisabled }) => {
-
+export const FieldLayout = () => {
 	return (
 		<div className={styles.ticTacField}>
-			<SubFieldContainer
-				handleFieldClick={handleFieldClick}
-				field={field}
-				isDisabled={isDisabled}
-			></SubFieldContainer>
+			<SubFieldContainer />
 		</div>
-
-
-	)
-
-}
-
-FieldLayout.propTypes = {
-	handleFieldClick: PropTypes.func.isRequired,
-	field: PropTypes.array,
-	isDisabled: PropTypes.bool,
-}
+	);
+};

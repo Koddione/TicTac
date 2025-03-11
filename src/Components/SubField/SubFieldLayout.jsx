@@ -1,23 +1,23 @@
 import styles from './SubField.module.css';
 import PropTypes from 'prop-types';
 
-export const SubFieldLayout = ({ border, id, handleFieldClick, children, disabled }) => {
-	const handleClick = () => {
-		if (disabled) return;
-		handleFieldClick(id);
-	}
-
+export const SubFieldLayout = ({
+	border,
+	id,
+	children,
+	handleClick,
+	isGameEnded,
+}) => {
 	return (
 		<div
 			id={id}
-			onClick={handleClick}
+			onClick={() => handleClick(id)}
 			className={`${styles.subField} ${styles[border]}`}
 			style={{
-				pointerEvents: disabled ? 'none' : 'auto',
-				opacity: disabled ? 0.5 : 1,
-				cursor: disabled ? 'not-allowed' : 'pointer',
-			}}
-		>
+				pointerEvents: isGameEnded ? 'none' : 'auto',
+				opacity: isGameEnded ? 0.5 : 1,
+				cursor: isGameEnded ? 'not-allowed' : 'pointer',
+			}}>
 			{children}
 		</div>
 	);
@@ -27,6 +27,6 @@ SubFieldLayout.propTypes = {
 	border: PropTypes.string,
 	children: PropTypes.node,
 	id: PropTypes.number.isRequired,
-	handleFieldClick: PropTypes.func.isRequired,
-	disabled: PropTypes.bool
+	handleClick: PropTypes.func.isRequired,
+	isGameEnded: PropTypes.bool.isRequired,
 };
