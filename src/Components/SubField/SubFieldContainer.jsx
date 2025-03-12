@@ -1,14 +1,25 @@
+import { useDispatch, useSelector } from 'react-redux';
 import { EMPTY_FIELD, WIN_PATTERNS } from '../../constants';
 import { getBorder } from '../../getBorder';
-import { useSubscribe } from '../../hooks/useSubscribe';
-import { store } from '../../store';
 import { SubFieldLayout } from './SubFieldLayout';
 import PropTypes from 'prop-types';
+import {
+	selectCurrentPlay,
+	selectField,
+	selectIsGameEnded,
+} from '../../selectors';
+import {
+	actionCurrentPlay,
+	actionDraw,
+	actionField,
+	actionIsGameEnded,
+} from '../../actions';
 
 export const SubFieldContainer = () => {
-	const { currentPlay } = store.getState();
-	const { field } = store.getState();
-	const { isGameEnded } = store.getState();
+	const dispatch = useDispatch();
+	const currentPlay = useSelector(selectCurrentPlay);
+	const field = useSelector(selectField);
+	const isGameEnded = useSelector(selectIsGameEnded);
 
 	const checkWinner = (field) => {
 		for (let i = 0; i < WIN_PATTERNS.length; i++) {
@@ -24,35 +35,23 @@ export const SubFieldContainer = () => {
 
 		if (newField[id] === '') {
 			newField[id] = currentPlay;
-			store.dispatch({ type: 'SET_FIELD', payload: newField });
-			store.dispatch({
-				type: 'SET_CURRENT_PLAY',
-				payload: currentPlay === 'X' ? '0' : 'X',
-			});
+			dispatch(actionField(newField));
+			dispatch(actionCurrentPlay(currentPlay === 'X' ? '0' : 'X'));
 		}
 
 		const winner = checkWinner(newField);
 		if (winner) {
-			store.dispatch({ type: 'CHECK_END_GAME', payload: true });
+			dispatch(actionIsGameEnded(true));
 			winner === 'X'
-				? store.dispatch({
-						type: 'GAME_STATE',
-						payload: 'Победа крестиков',
-				  })
-				: store.dispatch({
-						type: 'GAME_STATE',
-						payload: 'Победа ноликов',
-				  });
+				? dispatch(actionDraw('Победа крестиков'))
+				: dispatch(actionDraw('Победа ноликов'));
 
 			return;
 		}
 		if (!newField.includes('') && !winner) {
-			store.dispatch({ type: 'CHECK_END_GAME', payload: true });
-			store.dispatch({ type: 'GAME_STATE', payload: 'Ничья' });
-			store.dispatch({
-				type: 'SET_FIELD',
-				payload: EMPTY_FIELD,
-			});
+			dispatch(actionIsGameEnded(true));
+			dispatch(actionDraw('Ничья'));
+			dispatch(actionField(EMPTY_FIELD));
 			return;
 		}
 	};
@@ -61,8 +60,6 @@ export const SubFieldContainer = () => {
 		if (isGameEnded) return;
 		handleFieldClick(id);
 	};
-
-	useSubscribe();
 
 	return (
 		<>

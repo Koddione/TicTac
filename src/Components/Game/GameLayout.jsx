@@ -11,7 +11,7 @@ export const GameLayout = ({ handleBtnClickPlay, isGameEnded }) => {
 			<FieldContainer />
 
 			<button className={styles.btnPlay} onClick={handleBtnClickPlay}>
-				{isGameEnded ? 'Начать игру' : 'Начать сначала'}
+				{isGameEnded ? 'Начать игру' : 'Закончить игру'}
 			</button>
 		</div>
 	);
